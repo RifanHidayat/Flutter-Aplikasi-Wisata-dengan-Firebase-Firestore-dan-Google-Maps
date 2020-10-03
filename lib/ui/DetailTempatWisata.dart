@@ -50,162 +50,168 @@ class _DetailTempatWisataState extends State<DetailTempatWisataScreen> {
                 ),
               ),
               SingleChildScrollView(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Column(
-                        children: [
-                          Stack(
-                            children: <Widget>[
-                              Image.network(
-                                widget.photo,
-                                width: double.infinity,
-                                height: 250,
-                                fit: BoxFit.fill,
-                              ),
-                              Container(
-                                margin: EdgeInsets.symmetric(vertical: 150),
-                                width: double.maxFinite,
-                                height: 100,
-                                color: Colors.black26,
-                              ),
-                              Container(
-                                width: double.infinity,
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 170, horizontal: 10),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Container(
-                                        margin: EdgeInsets.only(left: 25),
-                                        alignment: Alignment.bottomLeft,
-                                        child: Column(
-                                          children: <Widget>[
-                                            Text(
-                                              widget.nama,
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
+                child: Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Column(
+                          children: [
+                            Stack(
+                              children: <Widget>[
+                                Image.network(
+                                  widget.photo,
+                                  width: double.infinity,
+                                  height: 250,
+                                  fit: BoxFit.fill,
+                                ),
+                                Container(
+                                  margin: EdgeInsets.symmetric(vertical: 150),
+                                  width: double.maxFinite,
+                                  height: 100,
+                                  color: Colors.black26,
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  alignment: Alignment.topLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 170, horizontal: 10),
+                                    child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(left: 25),
+                                          alignment: Alignment.bottomLeft,
+                                          child: Column(
+                                            children: <Widget>[
+                                              Text(
+                                                widget.nama,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Row(
+                                            children: <Widget>[
+                                              new Icon(
+                                                Icons.location_on,
+                                                color: Colors.white,
+                                                size: 20,
+                                              ),
+                                              Flexible(
+                                                child: Text(
+                                                  widget.alamat,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.bold),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 230, horizontal: 10),
+                                  child: Container(
+                                    width: double.infinity,
+                                    child: new Card(
+                                      child: new Padding(
+                                        padding: const EdgeInsets.all(15.0),
                                         child: Row(
                                           children: <Widget>[
-                                            new Icon(
-                                              Icons.location_on,
-                                              color: Colors.white,
-                                              size: 20,
-                                            ),
-                                            Text(
-                                              widget.alamat,
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.bold),
+                                            Expanded(
+                                              child: Container(
+                                                padding: EdgeInsets.only(left: 20),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    new Text(
+                                                      widget.deskripsi,
+                                                      style: new TextStyle(
+                                                          fontSize: 18.0,
+                                                          color: Colors.black),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
                                             )
                                           ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 230, horizontal: 10),
-                                child: Container(
-                                  width: double.infinity,
-                                  child: new Card(
-                                    child: new Padding(
-                                      padding: const EdgeInsets.all(15.0),
-                                      child: Row(
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 400, horizontal: 10),
+                                  child: Card(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Column(
                                         children: <Widget>[
-                                          Container(
-                                            padding: EdgeInsets.only(left: 20),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Text(
-                                                  widget.deskripsi,
-                                                  style: new TextStyle(
-                                                      fontSize: 18.0,
-                                                      color: Colors.black),
-                                                ),
-                                              ],
+                                          Center(
+                                            child: SizedBox(
+                                              width: 300.0,
+                                              height: 300.0,
+                                              child: GoogleMap(
+                                                  initialCameraPosition:
+                                                      CameraPosition(
+                                                          target: LatLng(double.parse(widget.lat),double.parse(widget.long)),
+                                                          zoom: 11.0),
+                                                  markers:
+                                                      Set<Marker>.of(<Marker>[
+                                                    Marker(
+                                                      markerId: MarkerId(
+                                                          "${widget.id}"),
+                                                      position: LatLng(
+                                                          double.parse(widget.lat),
+                                                          double.parse(widget.long)),
+                                                      infoWindow: InfoWindow(
+                                                          title:
+                                                              "${widget.nama}",
+                                                          snippet:
+                                                              " Alamat: ${widget.alamat}"),
+                                                    ),
+                                                  ]),
+                                                  gestureRecognizers: <
+                                                      Factory<
+                                                          OneSequenceGestureRecognizer>>[
+                                                    Factory<
+                                                        OneSequenceGestureRecognizer>(
+                                                      () =>
+                                                          ScaleGestureRecognizer(),
+                                                    ),
+                                                  ].toSet()),
                                             ),
-                                          )
+                                          ),
+                                          _builbtn()
                                         ],
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 320, horizontal: 10),
-                                child: Card(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Column(
-                                      children: <Widget>[
-                                        Center(
-                                          child: SizedBox(
-                                            width: 300.0,
-                                            height: 300.0,
-                                            child: GoogleMap(
-                                                initialCameraPosition:
-                                                    CameraPosition(
-                                                        target: LatLng(double.parse(widget.lat),double.parse(widget.long)),
-                                                        zoom: 11.0),
-                                                markers:
-                                                    Set<Marker>.of(<Marker>[
-                                                  Marker(
-                                                    markerId: MarkerId(
-                                                        "${widget.id}"),
-                                                    position: LatLng(
-                                                        double.parse(widget.lat),
-                                                        double.parse(widget.long)),
-                                                    infoWindow: InfoWindow(
-                                                        title:
-                                                            "${widget.nama}",
-                                                        snippet:
-                                                            " Alamat: ${widget.alamat}"),
-                                                  ),
-                                                ]),
-                                                gestureRecognizers: <
-                                                    Factory<
-                                                        OneSequenceGestureRecognizer>>[
-                                                  Factory<
-                                                      OneSequenceGestureRecognizer>(
-                                                    () =>
-                                                        ScaleGestureRecognizer(),
-                                                  ),
-                                                ].toSet()),
-                                          ),
-                                        ),
-                                        _builbtn()
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
 
-                            ],
-                          ),
+                              ],
+                            ),
 
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

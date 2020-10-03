@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:wisata/database_service/database_services.dart';
-import 'package:wisata/models/ModelMaps.dart';
 import 'package:wisata/models/WisataModel.dart';
 import 'package:wisata/ui/ResideDrawer.dart';
 
@@ -154,33 +153,31 @@ class _MapScreenState extends State<MapScreen> {
                                         image: NetworkImage(items[index].photo),
                                         fit: BoxFit.cover))),
                             SizedBox(width: 5.0),
-                            Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    items[index].nama,
-                                    style: TextStyle(
-                                        fontSize: 12.5,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    items[index].alamat,
-                                    style: TextStyle(
-                                        fontSize: 12.0,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Container(
-                                    width: 170.0,
-                                    child: Text(
-                                      items[index].deskripsi,
-                                      style: TextStyle(
-                                          fontSize: 11.0,
-                                          fontWeight: FontWeight.w300),
+                            Expanded(
+                              child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        items[index].nama,
+                                        style: TextStyle(
+                                            fontSize: 12.5,
+                                            fontWeight: FontWeight.bold),
+                                      ),
                                     ),
-                                  )
-                                ])
+                                    Flexible(
+                                      child: Text(
+                                        items[index].alamat,
+                                        style: TextStyle(
+                                            fontSize: 12.0,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ),
+
+                                  ]),
+                            )
                           ]))))
             ]),
           )),

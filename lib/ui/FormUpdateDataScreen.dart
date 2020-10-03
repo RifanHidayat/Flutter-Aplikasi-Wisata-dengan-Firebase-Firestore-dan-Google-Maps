@@ -317,7 +317,7 @@ class _FormUpdateDataScreenState extends State<FormUpdateData> {
             ),
             decoration: new InputDecoration(
                 prefixIcon: Icon(
-                  Icons.place_outlined,
+                  Icons.description,
                   color: Colors.green,
                 ),
                 hintText: "Masukkan Deskripsi tempat wisata",

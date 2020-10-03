@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Travel App",
+      color: Colors.green,
       debugShowCheckedModeBanner: false,
       home: Root(),
     );
