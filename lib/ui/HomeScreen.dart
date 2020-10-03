@@ -332,7 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   final snackBar = SnackBar(
-    content: Text('Tap Satu lagu untuk keluar dari aplikasi'),
+    content: Text('Tap Satu lagi untuk keluar dari aplikasi'),
     duration: snackBarDuration,
   );
 
