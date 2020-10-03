@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Travel App",
-        color: Colors.red[300],
+        color: Colors.green,
       debugShowCheckedModeBanner: false,
       home:  SplassScreen()
+
     );
   }
 }
